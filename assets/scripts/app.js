@@ -1,8 +1,36 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-currentResult = ((currentResult + 10) * 3) / 2 - 1;
+const getUserInput = () => {
+  return parseInt(userInput.value);
+};
 
-let calculationDescription = "(" + defaultResult + " + 10) * 3 / 2 - 1";
+const add = () => {
+  const enteredValue = getUserInput();
+  const currentDesc = `${currentResult} + ${enteredValue}`;
+  currentResult = currentResult + enteredValue;
+  outputResult(currentResult, currentDesc);
+};
+const multiply = () => {
+  const enteredValue = getUserInput();
+  const currentDesc = `${currentResult} * ${enteredValue}`;
+  currentResult = currentResult * enteredValue;
+  outputResult(currentResult, currentDesc);
+};
+const substract = () => {
+  const enteredValue = getUserInput();
+  const currentDesc = `${currentResult} - ${enteredValue}`;
+  currentResult = currentResult - enteredValue;
+  outputResult(currentResult, currentDesc);
+};
+const divide = () => {
+  const enteredValue = getUserInput();
+  const currentDesc = `${currentResult} / ${enteredValue}`;
+  currentResult = currentResult / enteredValue;
+  outputResult(currentResult, currentDesc);
+};
 
-outputResult(currentResult, calculationDescription);
+addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", substract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
